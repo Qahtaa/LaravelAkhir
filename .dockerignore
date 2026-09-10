@@ -1,0 +1,10 @@
+.git
+.env
+.env.*
+!.env.example
+.vercel
+database/database.sqlite
+node_modules
+tests
+vendor
+public/build

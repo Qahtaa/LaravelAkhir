@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Str;
 
+$sessionDomain = env('SESSION_DOMAIN');
+
+if ($sessionDomain === 'null' || $sessionDomain === '') {
+    $sessionDomain = null;
+}
+
 return [
 
     /*
@@ -18,7 +24,7 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'database'),
+    'driver' => env('SESSION_DRIVER', 'cookie'),
 
     /*
     |--------------------------------------------------------------------------
@@ -156,7 +162,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
+    'domain' => $sessionDomain,
 
     /*
     |--------------------------------------------------------------------------

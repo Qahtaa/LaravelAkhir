@@ -2,7 +2,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('login', absolute: false) }}">
         @csrf
 
         <!-- Email -->
@@ -34,7 +34,7 @@
 
         <div class="flex items-center justify-between gap-4 mt-4">
             @if (Route::has('password.request'))
-                <a class="aa-link" href="{{ route('password.request') }}">
+                <a class="aa-link" href="{{ route('password.request', absolute: false) }}">
                     {{ __('Lupa kata sandi?') }}
                 </a>
             @endif

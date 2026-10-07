@@ -3,7 +3,7 @@
         {{ __('Ini adalah area aman. Konfirmasi kata sandi kamu sebelum melanjutkan.') }}
     </div>
 
-    <form method="POST" action="{{ route('password.confirm') }}">
+    <form method="POST" action="{{ route('password.confirm', absolute: false) }}">
         @csrf
 
         <!-- Kata sandi -->

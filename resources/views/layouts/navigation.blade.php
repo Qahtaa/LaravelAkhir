@@ -53,7 +53,7 @@
                         </x-dropdown-link>
 
                         <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" action="{{ route('logout', absolute: false) }}">
                             @csrf
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
@@ -107,7 +107,7 @@
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profil') }}
                 </x-responsive-nav-link>
-                <form method="POST" action="{{ route('logout') }}">
+                <form method="POST" action="{{ route('logout', absolute: false) }}">
                     @csrf
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();

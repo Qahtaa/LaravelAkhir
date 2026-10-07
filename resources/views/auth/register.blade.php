@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('register', absolute: false) }}">
         @csrf
 
         <!-- Nama -->
@@ -40,7 +40,7 @@
         </div>
 
         <div class="flex items-center justify-between gap-4 mt-4">
-            <a class="aa-link" href="{{ route('login') }}">
+            <a class="aa-link" href="{{ route('login', absolute: false) }}">
                 {{ __('Sudah punya akun?') }}
             </a>
 

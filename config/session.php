@@ -3,9 +3,14 @@
 use Illuminate\Support\Str;
 
 $sessionDomain = env('SESSION_DOMAIN');
+$sessionDriver = env('SESSION_DRIVER', 'cookie');
 
 if ($sessionDomain === 'null' || $sessionDomain === '') {
     $sessionDomain = null;
+}
+
+if (env('VERCEL')) {
+    $sessionDriver = 'cookie';
 }
 
 return [
@@ -24,7 +29,7 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'cookie'),
+    'driver' => $sessionDriver,
 
     /*
     |--------------------------------------------------------------------------
